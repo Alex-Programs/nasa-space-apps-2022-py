@@ -4,6 +4,7 @@ from waitress import serve
 from solarwind import get_windspeed
 import json
 import definitelymetoffice
+import solarstatus
 
 app = Flask(__name__)
 
@@ -35,7 +36,6 @@ def solarwind():
 
 
 @app.route("/api/get_locations")
-@cache.cached(timeout=3000)
 def get_locations():
     query = request.args.get("query")
 
@@ -47,7 +47,6 @@ def get_locations():
 
 
 @app.route("/api/get_weather")
-@cache.cached(timeout=30)
 def get_weather():
     error, data = definitelymetoffice.get_weather(request.args.get("id"))
     if error:
@@ -55,6 +54,24 @@ def get_weather():
 
     return {"error": False, "data": {"temp": data.temp, "windSpeed": data.windSpeed, "gustSpeed": data.maxGustSpeed}}
 
+
+@app.route("/api/solarstatus/xray")
+@cache.cached(timeout=360)
+def solar_status_xray():
+    error, data = solarstatus.get_xray_status()
+    if error:
+        return {"error": True, "message": error}
+
+    return {"error": False, "data": data}
+
+@app.route("/api/solarstatus/magneto")
+@cache.cached(timeout=360)
+def solar_status_magneto():
+    error, data = solarstatus.get_magneto_status()
+    if error:
+        return {"error": True, "message": error}
+
+    return {"error": False, "data": data}
 
 if __name__ == "__main__":
     dev = True

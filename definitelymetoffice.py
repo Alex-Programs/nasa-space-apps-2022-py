@@ -1,6 +1,7 @@
 import requests
 import json
 from dataclasses import dataclass
+from cachetools import cached, LRUCache, TTLCache
 
 fakeua = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"}
@@ -18,6 +19,7 @@ class LocationResult():
     longitude: float
 
 
+@cached(cache=TTLCache(maxsize=8192, ttl=360))
 def get_locations(query):
     url = "https://locator-service.api.bbci.co.uk/locations?api_key=AGbFAKx58hyjQScCXIYrxuEwJh2W2cmv&stack=aws&locale=en&filter=international&place-types=settlement%2Cairport%2Cdistrict&order=importance&a=true&format=json"
 
@@ -52,6 +54,7 @@ class WeatherSample():
     maxGustSpeed: float
 
 
+@cached(cache=TTLCache(maxsize=8192, ttl=360))
 def get_weather(locationID):
     url = f"https://weather-broker-cdn.api.bbci.co.uk/en/maps/forecasts-observations?locations={str(locationID)}"
 
@@ -81,7 +84,6 @@ def get_weather(locationID):
 
     else:
         temp = None
-
 
     tempK = temp - 273
 

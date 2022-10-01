@@ -29,6 +29,7 @@ def get_xray_status():
         return "Hash not in hashmap", None
 
 
+@cached(cache=TTLCache(maxsize=8192, ttl=360))
 def get_magneto_status():
     r = requests.get("http://www.n3kl.org/sun/images/kpstatus.gif?")
 
@@ -52,6 +53,7 @@ def get_magneto_status():
 
     else:
         return "Hash not in hashmap", None
+
 
 if __name__ == "__main__":
     print(str(get_xray_status()))
