@@ -43,7 +43,7 @@ def get_locations():
     if error:
         return {"error": True, "message": error}
 
-    return data
+    return {"error": False, "data": data}
 
 
 @app.route("/api/get_weather")
@@ -64,6 +64,7 @@ def solar_status_xray():
 
     return {"error": False, "data": data}
 
+
 @app.route("/api/solarstatus/magneto")
 @cache.cached(timeout=360)
 def solar_status_magneto():
@@ -72,6 +73,7 @@ def solar_status_magneto():
         return {"error": True, "message": error}
 
     return {"error": False, "data": data}
+
 
 if __name__ == "__main__":
     dev = True
