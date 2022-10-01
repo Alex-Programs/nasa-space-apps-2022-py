@@ -15,9 +15,10 @@ temps = [10000000, 6000000, 2500000, 2000000, 1000000, 600000, 50000, 10000, 450
 namesToImages = {}
 
 for name in names:
-    image = Image.open(f"{name}.png").crop((458,458,3640,3640))
+    image = Image.open(f"{name}.png").crop((458, 458, 3640, 3640))
     namesToImages[name] = image
     print("Loaded " + name)
+
 
 def fetch_images():
     for name in names:
@@ -31,6 +32,7 @@ def fetch_images():
 
 def deg_to_rad(angle):
     return angle * (math.pi / 180)
+
 
 def rad_to_deg(angle):
     return angle * (180 / math.pi)
@@ -74,13 +76,16 @@ def get_temperature(lat, long):
 
     return avg
 
+
 def get_distance(lat1, lat2, long1, long2):
     lat1 = deg_to_rad(lat1)
     lat2 = deg_to_rad(lat2)
     long1 = deg_to_rad(long1)
     long2 = deg_to_rad(long2)
-    angle = rad_to_deg(math.acos(math.sin(lat1)*math.sin(lat2)+math.cos(lat1)*math.cos(lat2)*math.cos(long1 - long2)))/360
+    angle = rad_to_deg(
+        math.acos(math.sin(lat1) * math.sin(lat2) + math.cos(lat1) * math.cos(lat2) * math.cos(long1 - long2))) / 360
     return 696000 * angle
+
 
 if __name__ == "__main__":
     # fetch_images()
