@@ -9,6 +9,6 @@
 }
 </style>
 
-<div class="py-64 px-16 box rounded-3xl mb-8" >
+<div class="p-16 box rounded-3xl mb-8" >
     <slot />
 </div>
