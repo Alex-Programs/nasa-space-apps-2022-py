@@ -32,6 +32,9 @@ def fetch_images():
 def deg_to_rad(angle):
     return angle * (math.pi / 180)
 
+def rad_to_deg(angle):
+    return angle * (180 / math.pi)
+
 
 def lat_long_to_xy(lat, long):
     theta = (long + 360) % 360
@@ -82,3 +85,4 @@ def get_distance(lat1, lat2, long1, long2):
 if __name__ == "__main__":
     # fetch_images()
     print(get_temperature(-89, 10))
+    print(get_distance(0, 0, 45, 90))
