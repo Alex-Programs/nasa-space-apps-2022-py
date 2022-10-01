@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory, request
+from flask import Flask, send_from_directory, request, send_file
 from flask_caching import Cache
 from waitress import serve
 from solarwind import get_windspeed
@@ -10,9 +10,16 @@ app = Flask(__name__)
 cache = Cache(config={'CACHE_TYPE': 'SimpleCache'})
 cache.init_app(app)
 
+
 @app.route("/<path:path>")
 def serve_svelte(path):
-    return send_from_directory("svelteapp", path)
+    return send_from_directory("frontend/public", path)
+
+
+@app.route("/")
+def serve_index():
+    return send_file("frontend/public/index.html")
+
 
 @app.route("/api/solarwind")
 @cache.cached(timeout=30)
