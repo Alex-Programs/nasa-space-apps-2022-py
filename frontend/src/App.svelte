@@ -1,6 +1,8 @@
-<script>
+<script lang="ts">
     import Box from "./Box.svelte";
+	let location = "";
 
+2
 </script>
 <style>
 @tailwind base;
@@ -22,7 +24,7 @@
 <main class="bg-gradient-to-r from-teal-700 to-slate-900 p-8 h-screen">
 	<Box>
 		<div class="text-center">
-			<input class="p-8 rounded-xl outline-none text-white text-xl opacity-80" type="text" name="location" id="location" placeholder="Location">
+			<input class="p-8 rounded-xl outline-none text-white text-xl opacity-80" type="text" name="location" id="location" placeholder="Location" value={location}>
 		</div>
 	</Box>
 </main>
