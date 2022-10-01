@@ -55,29 +55,35 @@ class WeatherSample():
 def get_weather(locationID):
     url = f"https://weather-broker-cdn.api.bbci.co.uk/en/maps/forecasts-observations?locations={str(locationID)}"
 
+    print(url)
     r = requests.get(url, headers=fakeua)
 
     if r.status_code != 200:
-        return "Invalid status code", None
+        return f"Invalid status code (", None
 
     data = r.json()
 
+    print(str(data))
+
     try:
-        print(str(data["features"][0]["properties"]["observations"][0]))
-        forecast = data["features"][0]["properties"]["observations"][0]
+        if data["features"][0]["properties"].get("observations"):
+            forecast = data["features"][0]["properties"]["observations"][0]
+        else:
+            forecast = data["features"][0]["properties"]["forecasts"][0]
     except:
         return "Invalid JSON", None
 
-    tempC = forecast.get("temperature")
-    if tempC:
-        tempC = tempC.get("c")
-    else:
-        tempK = None
+    temp = forecast.get("temperature")
+    if temp:
+        temp = temp.get("c")
+        if not temp:
+            temp = None
 
-    if tempC:
-        tempK = tempC - 273
     else:
-        tempK = None
+        temp = None
+
+
+    tempK = temp - 273
 
     averageWindSpeed = forecast.get("averageWindSpeed")
 
@@ -93,7 +99,9 @@ def get_weather(locationID):
         if not maxWindGustSpeed:
             maxWindGustSpeed = None
 
-    return WeatherSample(tempK, averageWindSpeed, maxWindGustSpeed)
+    print(str(forecast))
+
+    return None, WeatherSample(tempK, averageWindSpeed, maxWindGustSpeed)
 
 
 if __name__ == "__main__":
