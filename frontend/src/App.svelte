@@ -1,30 +1,28 @@
-<script lang="ts">
-	export let name: string;
+<script>
+    import Box from "./Box.svelte";
+
 </script>
-
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+#location {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+	width: 240px;
+	transition: width 0.5s;
+	transition-timing-function: cubic-bezier(.77,.31,.22,.66);
+}
+#location:focus {
+	width: 100%;
+}
 </style>
+
+<main class="bg-gradient-to-r from-teal-700 to-slate-900 p-8 h-screen">
+	<Box>
+		<div class="text-center">
+			<input class="p-8 rounded-xl outline-none text-white text-xl opacity-80" type="text" name="location" id="location" placeholder="Location">
+		</div>
+	</Box>
+</main>
