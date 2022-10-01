@@ -4,11 +4,14 @@ from PIL import Image
 from io import BytesIO, StringIO
 import math
 
+BRIGHTNESS_CUTOFF = 190
+
+names = ["0131", "0094", "0335", "0211", "0193",
+             "0171", "0304", "1600", "1700", "HMIIF"]
+
+temps = [10000000, 6000000, 2500000, 2000000, 1000000, 600000, 50000, 10000, 4500, 3000, 2000]
 
 def fetch_images():
-    names = ["0131", "0094", "0335", "0211", "0193",
-             "0171", "0304", "1600", "4500", "1700", "HMIIF"]
-    print(names)
     for name in names:
         print(
             f"https://sdo.gsfc.nasa.gov/assets/img/latest/latest_4096_{name}.jpg")
@@ -29,23 +32,27 @@ def lat_long_to_xy(lat, long):
     y = math.cos(deg_to_rad(phi))
     return x, y
 
-
 def get_pixel(image, lat, long):
     x, y = lat_long_to_xy(lat, long)
     x = (x * (image.width / 2)) + (image.width / 2)
     y = (y * (image.width / 2)) + (image.width / 2)
     return image.getpixel((x, y))
 
-
-if __name__ == "__main__":
-    # fetch_images()
-    print(get_pixel(
-        Image.open("1600.png").crop((
+def get_temperature(lat, long):
+    for (name, temp) in zip(names, temps):
+        image = Image.open(f"{name}.png").crop((
             458,
             458,
             3640,
             3640
-        )),
-        90,
-        90
-    ))
+        ))
+        (r, g, b) = get_pixel(image, lat, long)
+        brightness = max([r, g, b])
+        if brightness >= BRIGHTNESS_CUTOFF:
+            return temp
+
+
+
+if __name__ == "__main__":
+    # fetch_images()
+    print(get_temperature(-89, 10))
