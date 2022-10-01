@@ -2,7 +2,7 @@
     import Box from "./Box.svelte";
 	let location = "";
 
-
+2
 </script>
 <style>
 @tailwind base;
