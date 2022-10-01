@@ -1,96 +1,86 @@
-
+[
        {
-              "result":[
-              {
-              "event_type":"SS","area_atdiskcenter":428985984,"event_coord2":359.602996826171875,"event_coord1":-527.469970703125,"area_raw":null},{
-              "event_type":"SS","area_atdiskcenter":632249024,"event_coord2":161.167007446289062,"event_coord1":259.764007568359375,"area_raw":null},{
-              "event_type":"SS","area_atdiskcenter":333679008,"event_coord2":-464.7550048828125,"event_coord1":663.16400146484375,"area_raw":null},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":23,"event_coord1":-87,"area_raw":null,"fl_goescls":"C4.0"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":0,"event_coord1":0,"area_raw":null,"fl_goescls":"C4.0"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":422.399993896484375,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":422.399993896484375,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":24,"event_coord1":-87,"area_raw":null,"fl_goescls":"C4.0"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":0,"event_coord1":0,"area_raw":null,"fl_goescls":"C4.0"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":0,"event_coord1":0,"area_raw":null,"fl_goescls":"M2.9"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":20,"event_coord1":-87,"area_raw":null,"fl_goescls":"M2.9"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-960,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-960,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-499.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"SS","area_atdiskcenter":397898016,"event_coord2":357.718994140625,"event_coord1":-489.218994140625,"area_raw":null},{
-              "event_type":"SS","area_atdiskcenter":621923008,"event_coord2":163.800003051757812,"event_coord1":311.194000244140625,"area_raw":null},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-422.399993896484375,"event_coord1":652.79998779296875,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":24,"event_coord1":-87,"area_raw":null,"fl_goescls":"M1.3"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":0,"event_coord1":0,"area_raw":null,"fl_goescls":"M1.3"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":422.399993896484375,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":422.399993896484375,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":192,"event_coord1":345.600006103515625,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":15,"event_coord1":22,"area_raw":null,"fl_goescls":"C5.8"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":192,"event_coord1":345.600006103515625,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":192,"event_coord1":345.600006103515625,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":192,"event_coord1":345.600006103515625,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":422.399993896484375,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":422.399993896484375,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-499.20001220703125,"event_coord1":652.79998779296875,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-499.20001220703125,"event_coord1":652.79998779296875,"area_raw":null,"fl_goescls":""},{
-              "event_type":"SS","area_atdiskcenter":628889984,"event_coord2":166.729995727539062,"event_coord1":361.510009765625,"area_raw":null},{
-              "event_type":"SS","area_atdiskcenter":393832000,"event_coord2":354.37200927734375,"event_coord1":-449.58099365234375,"area_raw":null},{
-              "event_type":"SS","area_atdiskcenter":311012000,"event_coord2":164.613998413085938,"event_coord1":239.608001708984375,"area_raw":null},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":28,"event_coord1":-30,"area_raw":null,"fl_goescls":"C3.4"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":0,"event_coord1":0,"area_raw":null,"fl_goescls":"C3.4"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":28,"event_coord1":-30,"area_raw":null,"fl_goescls":"C3.1"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-422.399993896484375,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":24,"event_coord1":-87,"area_raw":null,"fl_goescls":"C2.0"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":22,"event_coord1":-84,"area_raw":null,"fl_goescls":"C2.4"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":23,"event_coord1":-87,"area_raw":null,"fl_goescls":"C2.9"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-268.79998779296875,"event_coord1":883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":23,"event_coord1":-87,"area_raw":null,"fl_goescls":"C2.1"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":19,"event_coord1":-71,"area_raw":null,"fl_goescls":"C2.6"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":268.79998779296875,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":268.79998779296875,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":22,"event_coord1":-87,"area_raw":null,"fl_goescls":"C3.8"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-499.20001220703125,"event_coord1":576,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-499.20001220703125,"event_coord1":576,"area_raw":null,"fl_goescls":""},{
-              "event_type":"SS","area_atdiskcenter":560246016,"event_coord2":291.677001953125,"event_coord1":-865.07598876953125,"area_raw":null},{
-              "event_type":"SS","area_atdiskcenter":613001984,"event_coord2":170.085006713867188,"event_coord1":410.069000244140625,"area_raw":null},{
-              "event_type":"SS","area_atdiskcenter":309060992,"event_coord2":165.733993530273438,"event_coord1":292.625,"area_raw":null},{
-              "event_type":"SS","area_atdiskcenter":376688992,"event_coord2":352.670013427734375,"event_coord1":-408.54998779296875,"area_raw":null},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-28,"event_coord1":48,"area_raw":null,"fl_goescls":"C6.4"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-31,"event_coord1":52,"area_raw":null,"fl_goescls":"C6.7"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-499.20001220703125,"event_coord1":652.79998779296875,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-499.20001220703125,"event_coord1":652.79998779296875,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-499.20001220703125,"event_coord1":652.79998779296875,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-499.20001220703125,"event_coord1":652.79998779296875,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":268.79998779296875,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":19,"event_coord1":-87,"area_raw":null,"fl_goescls":"C2.3"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":-25,"event_coord1":58,"area_raw":null,"fl_goescls":"C2.2"},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":24,"event_coord1":-87,"area_raw":null,"fl_goescls":"C3.8"},{
-              "event_type":"SS","area_atdiskcenter":366792000,"event_coord2":350.58099365234375,"event_coord1":-365.990997314453125,"area_raw":null},{
-              "event_type":"SS","area_atdiskcenter":615934016,"event_coord2":174.06500244140625,"event_coord1":457.11700439453125,"area_raw":null},{
-              "event_type":"SS","area_atdiskcenter":538192000,"event_coord2":285.52801513671875,"event_coord1":-849.11700439453125,"area_raw":null},{
-              "event_type":"FL","area_atdiskcenter":null,"event_coord2":345.600006103515625,"event_coord1":-883.20001220703125,"area_raw":null,"fl_goescls":""}],
-              "association": [
-              ],
-              "overmax": false
-              }  
+              "time_tag": "2022-10-01T10:18:00",
+              "Obsdate": "2022-10-01T00:00:00",
+              "Obstime": "1018",
+              "Station": 16320,
+              "Observatory": "SVI",
+              "Type": "spt",
+              "Quality": 2,
+              "Region": 3107,
+              "Latitude": -25,
+              "Report_Longitude": -58,
+              "Longitude": -66,
+              "Report_Location": "S25W58",
+              "Location": "S25W66",
+              "Carlon": 190,
+              "Extent": 9,
+              "Area": 20,
+              "Numspot": 4,
+              "Zurich": 3,
+              "Penumbra": 2,
+              "Compact": 2,
+              "Spotclass": "Cso",
+              "Magcode": 2,
+              "Magclass": "B",
+              "Obsid": 222,
+              "Report_Status": 2,
+              "ValidSpotClass": 1
+       },
+       {
+              "time_tag": "2022-10-01T10:18:00",
+              "Obsdate": "2022-10-01T00:00:00",
+              "Obstime": "1018",
+              "Station": 16320,
+              "Observatory": "SVI",
+              "Type": "spt",
+              "Quality": 2,
+              "Region": 3110,
+              "Latitude": 17,
+              "Report_Longitude": -30,
+              "Longitude": -38,
+              "Report_Location": "N17W30",
+              "Location": "N17W38",
+              "Carlon": 162,
+              "Extent": 5,
+              "Area": 110,
+              "Numspot": 4,
+              "Zurich": 3,
+              "Penumbra": 2,
+              "Compact": 2,
+              "Spotclass": "Cso",
+              "Magcode": 2,
+              "Magclass": "B",
+              "Obsid": 225,
+              "Report_Status": 2,
+              "ValidSpotClass": 1
+       },
+       {
+              "time_tag": "2022-10-01T10:18:00",
+              "Obsdate": "2022-10-01T00:00:00",
+              "Obstime": "1018",
+              "Station": 16320,
+              "Observatory": "SVI",
+              "Type": "spt",
+              "Quality": 2,
+              "Region": 3111,
+              "Latitude": 28,
+              "Report_Longitude": 27,
+              "Longitude": 19,
+              "Report_Location": "N28E27",
+              "Location": "N28E19",
+              "Carlon": 105,
+              "Extent": 3,
+              "Area": 40,
+              "Numspot": 3,
+              "Zurich": 3,
+              "Penumbra": 2,
+              "Compact": 2,
+              "Spotclass": "Cso",
+              "Magcode": 2,
+              "Magclass": "B",
+              "Obsid": 227,
+              "Report_Status": 2,
+              "ValidSpotClass": 1
+       }
+]
