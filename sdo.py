@@ -1,4 +1,3 @@
-from typing import List
 import requests
 from PIL import Image
 from io import BytesIO, StringIO
