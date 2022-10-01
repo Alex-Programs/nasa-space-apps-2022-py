@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
 
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "3dmoonsun.js"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
 }
