@@ -23,7 +23,13 @@ def serve_assets(path):
 
 @app.route("/")
 def index():
-    render_template("index.html")
+    return render_template("index.html")
+
+
+@app.route("/location")
+def location():
+    return render_template("location.html")
+
 
 @app.route("/api/solarwind")
 @cache.cached(timeout=30)

@@ -1,3 +1,72 @@
-::root {
-    --orange: 
+:root {
+    --orange: #f97316;
+}
+
+body {
+    background-color: black;
+    color: var(--orange);
+
+    font-family: 'Raleway', sans-serif;
+}
+
+.content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+}
+
+.maintitle {
+    font-weight: lighter;
+    font-size: 75px;
+    text-align: center;
+}
+
+.searchbox-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbox {
+    outline: none;
+    background-color: transparent;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+
+    width: 100%;
+    font-size: 32px;
+
+    text-align: center;
+    padding: 5px;
+    transition: 0.2s width;
+
+    margin: 5px;
+}
+
+.searchitems-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 0;
+    margin: 0;
+}
+
+.searcheditem {
+    width: 90%;
+    text-align: center;
+    border: 1px solid var(--orange);
+    padding: 5px;
+    margin: 5px;
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.searcheditem:hover {
+    background-color: var(--orange);
+    color: black;
 }

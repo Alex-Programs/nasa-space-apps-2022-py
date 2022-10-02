@@ -87,6 +87,5 @@ def get_distance(lat1, lat2, long1, long2):
 
 
 if __name__ == "__main__":
-    # fetch_images()
     print(get_temperature(-89, 10))
     print(get_distance(0, 0, 45, 90))

@@ -3,8 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Deuterium</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/reset.css">
+
+    <link rel="stylesheet" href="/assets/styles.css">
+
+    <script src="/assets/main.js"></script>
 </head>
 <body>
+<div class="content">
+<h1 class="maintitle">Deuterium</h1>
 
+    <div class="searchbox-container">
+        <input type="text" class="searchbox" id="searchbox" oninput="updatePlaceList()">
+    </div>
+
+    <div class="searchitems-container" id="searchitems-container">
+    </div>
+</div>
 </body>
 </html>
