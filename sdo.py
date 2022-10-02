@@ -85,7 +85,20 @@ def get_distance(lat1, lat2, long1, long2):
         math.acos(math.sin(lat1) * math.sin(lat2) + math.cos(lat1) * math.cos(lat2) * math.cos(long1 - long2))) / 360
     return 696000 * angle
 
+def make_it_look_better(image: Image, new_black):
+    dest = Image.new("RGB", (image.width, image.height))
+    for x in range(image.width):
+        for y in range(image.height):
+            (r, g, b) = image.getpixel((x, y))
+            dest.putpixel((x, y), (
+                int(r + ((255 - r) * new_black[0]/255)),
+                int(g + ((255 - g) * new_black[1]/255)),
+                int(b + ((255 - b) * new_black[2]/255))
+            ))
+    dest.save("test.png")
 
 if __name__ == "__main__":
+    # fetch_images()
+    make_it_look_better(Image.open("0171.png"), (24,24,27))
     print(get_temperature(-89, 10))
     print(get_distance(0, 0, 45, 90))
