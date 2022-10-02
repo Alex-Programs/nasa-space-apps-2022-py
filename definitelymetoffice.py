@@ -52,11 +52,15 @@ class WeatherSample():
     temp: float
     windSpeed: float
     maxGustSpeed: float
+    humidity: float
+    windDescription: str
+    description: str
+
 
 
 @cached(cache=TTLCache(maxsize=8192, ttl=360))
 def get_weather(locationID):
-    url = f"https://weather-broker-cdn.api.bbci.co.uk/en/maps/forecasts-observations?locations={str(locationID)}"
+    url = f"https://weather-broker-cdn.api.bbci.co.uk/en/forecast/aggregated/{str(locationID)}"
 
     print(url)
     r = requests.get(url, headers=fakeua)
@@ -69,45 +73,32 @@ def get_weather(locationID):
     print(str(data))
 
     try:
-        if data["features"][0]["properties"].get("observations"):
-            forecast = data["features"][0]["properties"]["observations"][0]
-        else:
-            forecast = data["features"][0]["properties"]["forecasts"][0]
+        if data["forecasts"][0]["detailed"].get("reports"):
+            forecast = data["forecasts"][0]["summary"]["report"]
     except:
         return "Invalid JSON", None
 
-    temp = forecast.get("temperature")
-    if temp:
-        temp = temp.get("c")
-        if not temp:
-            temp = None
-
-    else:
-        temp = None
+    temp = forecast.get("maxTempC")
 
     tempK = temp - 273
 
-    averageWindSpeed = forecast.get("averageWindSpeed")
+    averageWindSpeed = forecast.get("windSpeedKph")
 
-    if averageWindSpeed:
-        averageWindSpeed = averageWindSpeed.get("kph")
-        if not averageWindSpeed:
-            averageWindSpeed = None
+    description = forecast.get("enhancedWeatherDescription")
 
-    maxWindGustSpeed = forecast.get("averageWindSpeed")
-    if maxWindGustSpeed:
-        maxWindGustSpeed = maxWindGustSpeed.get("kph")
+    maxWindGustSpeed = forecast.get("gustSpeedKph")
 
-        if not maxWindGustSpeed:
-            maxWindGustSpeed = None
+    windDescription = forecast.get("windDescription")
+
+    humidity = forecast.get("humidity")
 
     print(str(forecast))
 
-    return None, WeatherSample(tempK, averageWindSpeed, maxWindGustSpeed)
+    return None, WeatherSample(tempK, averageWindSpeed, maxWindGustSpeed, humidity, windDescription, description)
 
 
 if __name__ == "__main__":
-    error, locList = get_locations("te")
+    error, locList = get_locations("br")
     print(str(locList))
 
     for i in locList:
