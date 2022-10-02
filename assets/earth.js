@@ -27,7 +27,7 @@ function deg_to_rad(val) {
 }
 
 let targetLat = 0
-let targetLong = 270
+let targetLong = 360
 
 function setLatLong(lat, long) {
     targetLat = lat;
@@ -49,3 +49,9 @@ function animate() {
 }
 
 animate();
+
+const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  
+  setLatLong(parseFloat(params.lat), parseFloat(params.lon))
