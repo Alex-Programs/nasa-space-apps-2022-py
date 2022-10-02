@@ -1,14 +1,15 @@
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+const renderer = new THREE.WebGLRenderer({ alpha: true });
+renderer.setClearColor( 0xffffff, 0);
+renderer.setSize(512, 512);
+document.getElementById("three-earth").appendChild(renderer.domElement);
 
 const textureLoader = new THREE.TextureLoader();
 const geometry = new THREE.SphereGeometry(2.5, 64, 32);
-const map = textureLoader.load("/assets/earthmap1k.jpg");
-const bumpMap = textureLoader.load("/assets/earthbump1k.jpg")
+const map = textureLoader.load("/assets/earthmap8k.jpg");
+const bumpMap = textureLoader.load("/assets/earthbump2k.jpg")
 const specularMap = textureLoader.load("/assets/earthspecular1k.jpg")
 const specular  = new THREE.Color('grey')
 const material = new THREE.MeshPhongMaterial({ map, bumpMap, bumpScale: 0.2, specularMap, specular, specular });
@@ -30,7 +31,7 @@ let targetLong = 270
 
 function setLatLong(lat, long) {
     targetLat = lat;
-    targetLong = long + 270;
+    targetLong = -long + 270;
 }
 
 // x axis is latitude, y axis is longitude
@@ -48,4 +49,3 @@ function animate() {
 }
 
 animate();
-setLatLong(51.7457, 2.2178)

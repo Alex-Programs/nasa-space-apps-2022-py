@@ -39,6 +39,9 @@ def get_locations(query):
     output = []
 
     for location in results:
+        if location["id"] == "6691393" or (location["container"] == "Greater London" and location["name"] == "London"):
+            continue
+
         output.append(LocationResult(id=location["id"], name=location["name"], container=location["container"],
                                      containerId=location["containerId"],
                                      timezone=location["timezone"], country=location["country"],
@@ -57,20 +60,16 @@ class WeatherSample():
     description: str
 
 
-
 @cached(cache=TTLCache(maxsize=8192, ttl=360))
 def get_weather(locationID):
     url = f"https://weather-broker-cdn.api.bbci.co.uk/en/forecast/aggregated/{str(locationID)}"
 
-    print(url)
     r = requests.get(url, headers=fakeua)
 
     if r.status_code != 200:
         return f"Invalid status code (", None
 
     data = r.json()
-
-    print(str(data))
 
     try:
         if data["forecasts"][0]["detailed"].get("reports"):

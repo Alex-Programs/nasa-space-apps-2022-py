@@ -14,9 +14,16 @@ function updatePlaceList() {
 
         // For each item in the JSON array, add
         data.data.forEach(item => {
+            console.log(item)
             window.nameToData[item.name] = item
-            document.getElementById("searchitems-container").innerHTML += "<div class=\"searcheditem\" onclick='goToElement(this)'>" + item.name + ", " + item.container + " (" + item.country +") </div>";
+            document.getElementById("searchitems-container").innerHTML += "<div class=\"searcheditem\" onclick='goToElement(this)'>" + item.name + ", " + item.container + " (" + item.country + ") </div>";
         });
+
+        try {
+            setLatLong(data.data[0].latitude, data.data[0].longitude)
+        } catch (err) {
+            console.log(err)
+        }
     });
 }
 
@@ -29,6 +36,6 @@ function goTo(id, lat, lon, name) {
     window.location.href = "/location?id=" + id + "&lat=" + lat + "&lon=" + lon + "&name=" + name
 }
 
-window.onload = function() {
+window.onload = function () {
     updatePlaceList()
 }
