@@ -1,3 +1,7 @@
+let params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+
 function setEarthWeather() {
     // fetch() the weather from /api/get_weather with arg id set to the id of the location
     fetch("/api/get_weather?id=" + window.location.search.split("&")[0].split("=")[1]).then(response => response.json()).then(data => {
@@ -75,8 +79,8 @@ function setMagnetosphere() {
 setMagnetosphere()
 
 function setSunspot() {
-    lat = window.location.search.split("&")[1].split("=")[1]
-    lon = window.location.search.split("&")[2].split("=")[1]
+    lat = params.lat
+    lon = params.lon
     //fetch() sunspots from /api/sunspot_regions
     fetch("/api/sunspot_regions?lat=" + lat + "&lon=" + lon/2).then(response => response.json()).then(data => {
         // Set the sunspots
@@ -102,8 +106,8 @@ function setSunspot() {
 setSunspot()
 
 function setFlare() {
-    lat = window.location.search.split("&")[1].split("=")[1]
-    lon = window.location.search.split("&")[2].split("=")[1]
+    lat = params.lat
+    lon = params.lon
     //fetch() flares from /api/solarflare
     fetch("/api/solar_regions?lat=" + lat + "&lon=" + lon/2).then(response => response.json()).then(data => {
         // Set the flares
@@ -131,8 +135,8 @@ function setFlare() {
 setFlare()
 
 function setTemperature() {
-    lat = window.location.search.split("&")[1].split("=")[1]
-    lon = window.location.search.split("&")[2].split("=")[1]
+    lat = params.lat
+    lon = params.lon
     //fetch() temperature from /api/temperature
     fetch("/api/get_temperature?lat=" + lat + "&lon=" + lon/2).then(response => response.json()).then(data => {
         // Set the temperature

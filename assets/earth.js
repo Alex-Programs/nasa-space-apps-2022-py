@@ -1,4 +1,6 @@
-const scene = new THREE.Scene();
+console.log("LOADED")
+
+const scene2 = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -14,11 +16,11 @@ const specularMap = textureLoader.load("/assets/earthspecular1k.jpg")
 const specular  = new THREE.Color('grey')
 const material = new THREE.MeshPhongMaterial({ map, bumpMap, bumpScale: 0.2, specularMap, specular, specular });
 const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+scene2.add(cube);
 const light = new THREE.AmbientLight( 0xA0A0A0 );
 const point = new THREE.DirectionalLight(0xffffff, 0.5);
-scene.add(light)
-scene.add(point)
+scene2.add(light)
+scene2.add(point)
 
 camera.position.z = 5;
 
@@ -45,13 +47,13 @@ function animate() {
     //     targetLong += Math.random() * 90
     // }
 
-    renderer.render(scene, camera);
+    renderer.render(scene2, camera);
 }
 
 animate();
 
-const params = new Proxy(new URLSearchParams(window.location.search), {
+let params2 = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
   });
   
-  setLatLong(parseFloat(params.lat), parseFloat(params.lon))
+setLatLong(parseFloat(params2.lat), parseFloat(params2.lon))
