@@ -10,13 +10,13 @@ function updatePlaceList() {
             return
         }
 
-        window.nameToData = {}
+        window.IDToData = {}
 
         // For each item in the JSON array, add
         data.data.forEach(item => {
             console.log(item)
-            window.nameToData[item.name] = item
-            document.getElementById("searchitems-container").innerHTML += "<div class=\"searcheditem\" onclick='goToElement(this)'>" + item.name + ", " + item.container + " (" + item.country + ") </div>";
+            window.IDToData[item.id] = item
+            document.getElementById("searchitems-container").innerHTML += `<div class="searcheditem" onclick='goToElement(${item.id})'> ${item.name}, ${item.container} (${item.country}) </div>`
         });
 
         try {
@@ -27,8 +27,8 @@ function updatePlaceList() {
     });
 }
 
-function goToElement(element) {
-    data = window.nameToData[element.innerHTML.split(", ")[0]]
+function goToElement(elementID) {
+    data = window.IDToData[elementID]
     goTo(data.id, data.latitude, data.longitude, data.name)
 }
 

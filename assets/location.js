@@ -81,6 +81,7 @@ setMagnetosphere()
 function setSunspot() {
     lat = params.lat
     lon = params.lon
+    console.log(lat, lon)
     //fetch() sunspots from /api/sunspot_regions
     fetch("/api/sunspot_regions?lat=" + lat + "&lon=" + lon/2).then(response => response.json()).then(data => {
         // Set the sunspots
@@ -159,3 +160,9 @@ function setTemperature() {
 }
 
 setTemperature()
+
+setInterval(function () {
+    //console.log(params.lat, params.lon)
+    //setLatLong(parseFloat(params.lat), parseFloat(params.lon))
+    //console.log("Periodic")
+}, 100)
