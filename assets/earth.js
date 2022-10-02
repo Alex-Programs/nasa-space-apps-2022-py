@@ -6,7 +6,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 const textureLoader = new THREE.TextureLoader();
-const geometry = new THREE.SphereGeometry(2, 64, 32);
+const geometry = new THREE.SphereGeometry(2.5, 64, 32);
 const map = textureLoader.load("/assets/earthmap1k.jpg");
 const bumpMap = textureLoader.load("/assets/earthbump1k.jpg")
 const specularMap = textureLoader.load("/assets/earthspecular1k.jpg")
@@ -21,13 +21,31 @@ scene.add(point)
 
 camera.position.z = 5;
 
+function deg_to_rad(val) {
+    return val * (Math.PI / 180)
+}
+
+let targetLat = 0
+let targetLong = 270
+
+function setLatLong(lat, long) {
+    targetLat = lat;
+    targetLong = long + 270;
+}
+
+// x axis is latitude, y axis is longitude
 function animate() {
     requestAnimationFrame(animate);
 
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    cube.rotation.x -= (cube.rotation.x - deg_to_rad(targetLat)) * 0.05
+    cube.rotation.y -= (cube.rotation.y - deg_to_rad(targetLong)) * 0.05
+    // if (-(cube.rotation.x - deg_to_rad(targetLong)) < 0.0001) {
+    //     targetLat += Math.random() * 90
+    //     targetLong += Math.random() * 90
+    // }
 
     renderer.render(scene, camera);
-};
+}
 
 animate();
+setLatLong(51.7457, 2.2178)
