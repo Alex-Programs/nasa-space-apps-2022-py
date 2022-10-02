@@ -28,7 +28,14 @@ def index():
 
 @app.route("/location")
 def location():
-    return render_template("location.html")
+    lat = float(request.args.get("lat"))
+    lon = float(request.args.get("lon"))
+    placeName = request.args.get("name")
+
+    latAdjusted = lat
+    lonAdjusted = lon / 2
+
+    return render_template("location.html", lat=lat, lon=lon, latAdjusted=round(latAdjusted, 3), lonAdjusted=round(lonAdjusted, 3), placeName=placeName, placeNameCaps=placeName.upper())
 
 
 @app.route("/api/solarwind")

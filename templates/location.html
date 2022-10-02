@@ -6,16 +6,37 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/reset.css">
 
     <link rel="stylesheet" href="/assets/styles.css">
-
-    <script src="/assets/main.js"></script>
 </head>
 <body>
+<div class="earthsection">
+    <div class="earthimg-wrapper">
+        <img src="/assets/earth.png" alt="earth" class="earthimg">
+    </div>
+    <div class="earthtext">
+        <b>Earth weather in {{ placeName }}</b>
+    </div>
+</div>
+<div class="sunsection">
+    <div class="sunimg-wrapper">
+        <img src="/assets/0304-small.png" alt="sun" class="sunimg">
+    </div>
+    <div class="suntext">
+        <p>
+            <b>Equivalent weather on Sol at {{ latAdjusted }}°N, {{ lonAdjusted }}°E</b>
+        </p>
+        <p>Solar Wind speed is <span id="solarWindSpeed"></span></p>
+        <p>X rays are <span id="xRayStatus"></span></p>
+        <p>The magnetosphere is <span id="magnetoStatus"></span></p>
+        <p>Position is inside/close to/far from a sunspot, with a very low/high/very high chance of solar flares.</p>
+        <p>The temperature is <span id="solTemp"></span> - an egg would vaporise in <span id="eggVaporiseTime"></span> milliseconds</p>
+    </div>
 
+</div>
 </body>
 </html>

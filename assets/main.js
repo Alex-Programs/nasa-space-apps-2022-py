@@ -10,23 +10,24 @@ function updatePlaceList() {
             return
         }
 
-        window.nameToID = {}
+        window.nameToData = {}
 
         // For each item in the JSON array, add
         data.data.forEach(item => {
             console.log(item)
-            window.nameToID[item.name] = item.id
+            window.nameToData[item.name] = item
             document.getElementById("searchitems-container").innerHTML += "<div class=\"searcheditem\" onclick='goToElement(this)'>" + item.name + ", " + item.container + "</div>";
         });
     });
 }
 
 function goToElement(element) {
-    goToID(window.nameToID[element.innerHTML.split(", ")[0]])
+    data = window.nameToData[element.innerHTML.split(", ")[0]]
+    goTo(data.id, data.latitude, data.longitude, data.name)
 }
 
-function goToID(id) {
-    window.location.href = "/location?id=" + id
+function goTo(id, lat, lon, name) {
+    window.location.href = "/location?id=" + id + "&lat=" + lat + "&lon=" + lon + "&name=" + name
 }
 
 window.onload = function() {
