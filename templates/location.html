@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="/assets/styles.css">
 
     <script src="/assets/location.js"></script>
+    <script src="/assets/three.js"></script>
 </head>
 <body>
 <div class="earthsection">
     <div class="earthimg-wrapper">
-        <img src="/assets/earth.png" alt="earth" class="earthimg">
+        <canvas id="earthmodel" width="512" height="512"></canvas>
     </div>
     <div class="earthtext">
         <p>
@@ -34,6 +35,7 @@
             The temperature is <span id="earthTemp">↻</span>°C - you aren't cooking an egg on that!
         </p>
     </div>
+    <script src="/assets/earth.js"></script>
 </div>
 <div class="sunsection">
     <div class="sunimg-wrapper">

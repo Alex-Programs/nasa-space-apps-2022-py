@@ -80,7 +80,7 @@ body {
     font-size: 30px;
 }
 
-.earthimg-wrapper img, .sunimg-wrapper img {
+.earthimg-wrapper canvas, .sunimg-wrapper img {
     max-width: 512px;
     max-height: 512px;
 }

@@ -1,12 +1,11 @@
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+const renderer = new THREE.WebGLRenderer({canvas: document.getElementById("earthmodel")});
+renderer.setClearColor(new THREE.Color( 0x3cc1ff ), 0.0)
 
 const textureLoader = new THREE.TextureLoader();
-const geometry = new THREE.SphereGeometry(2.5, 64, 32);
+const geometry = new THREE.SphereGeometry(2.3, 64, 32);
 const map = textureLoader.load("/assets/earthmap1k.jpg");
 const bumpMap = textureLoader.load("/assets/earthbump1k.jpg")
 const specularMap = textureLoader.load("/assets/earthspecular1k.jpg")
@@ -26,11 +25,11 @@ function deg_to_rad(val) {
 }
 
 let targetLat = 0
-let targetLong = 270
+let targetLong = 360
 
 function setLatLong(lat, long) {
     targetLat = lat;
-    targetLong = long + 270;
+    targetLong = -long + 270;
 }
 
 // x axis is latitude, y axis is longitude
@@ -48,4 +47,10 @@ function animate() {
 }
 
 animate();
-setLatLong(51.7457, 2.2178)
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+
+setLatLong(parseFloat(params.lat), parseFloat(params.lon))
+
+
