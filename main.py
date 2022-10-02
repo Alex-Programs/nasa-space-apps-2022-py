@@ -156,9 +156,17 @@ def get_temperature():
 
 
 if __name__ == "__main__":
-    dev = True
+    from os.path import exists as file_exists
 
-    if dev:
+    if not file_exists("config.json"):
+        print("No config file found, writing. Default: dev=true")
+        with open("config.json", "w") as f:
+            f.write(json.dumps({"dev": True}))
+
+    with open("config.json") as f:
+        config = json.load(f)
+
+    if config["dev"]:
         app.run(host="0.0.0.0", port=8080, debug=True)
 
     else:
