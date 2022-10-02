@@ -32,7 +32,7 @@ class SolarRegionsData():
             daysback = abs(
                 (datetime.datetime.now() - datetime.datetime.strptime(x.get("observed_date"), "%Y-%m-%d")).days)
             return daysback <= daysbacklim and x.get("latitude") and x.get("longitude") and abs(
-                lat - x["latitude"]) < 6 and abs(lon - x["longitude"]) < 6
+                lat - x["latitude"]) < 12 and abs(lon - x["longitude"]) < 12
 
         closeRegions = list(filter(filter_func, self.data))
 
@@ -84,7 +84,7 @@ class SunspotData():
                 (datetime.datetime.now() - datetime.datetime.strptime(x.get("Obsdate").split("T")[0], "%Y-%m-%d")).days)
 
             return daysback <= daysbacklim and x.get("Latitude") and x.get("Longitude") and abs(
-                lat - x["Latitude"]) < 6 and abs(lon - x["Longitude"]) < 6
+                lat - x["Latitude"]) < 12 and abs(lon - x["Longitude"]) < 12
 
         closeRegions = list(filter(filter_func, self.data))
 
