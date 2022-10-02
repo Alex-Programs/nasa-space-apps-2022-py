@@ -1,10 +1,14 @@
-from flask import Flask, send_from_directory, request, send_file
+from flask import Flask, send_from_directory, Response, request, send_file
 from flask_caching import Cache
 from waitress import serve
 from solarwind import get_windspeed
 import json
 import definitelymetoffice
 import solarstatus
+import NOAA
+
+solarRegions = NOAA.SolarRegionsData()
+sunspotData = NOAA.SunspotData()
 
 app = Flask(__name__)
 
@@ -73,6 +77,45 @@ def solar_status_magneto():
         return {"error": True, "message": error}
 
     return {"error": False, "data": data}
+
+
+@app.route("/api/solar_regions")
+def solar_regions():
+    lat = request.args.get("lat")
+    lon = request.args.get("lon")
+
+    if not lat or not lon:
+        return {"error": True, "message": "Lat/Lon not supplied"}
+
+    lat, lon = int(lat), int(lon)
+
+    print(lat, lon)
+
+    data = solarRegions.get_region_data(lat, lon, 2)
+    if not data:
+        return {"error": True, "message": "No solar data"}
+
+    return Response(json.dumps(data), mimetype="application/json")
+
+
+@app.route("/api/sunspot_regions")
+def sunspot_regions():
+    lat = request.args.get("lat")
+    lon = request.args.get("lon")
+
+    if not lat or not lon:
+        return {"error": True, "message": "Lat/lon not supplied"}
+
+    lat, lon = int(lat), int(lon)
+
+    print(lat, lon)
+
+    data = sunspotData.get_close_sunspots(lat, lon, 2)
+
+    if not data:
+        return {"error": True, "message": "No solar data"}
+
+    return Response(json.dumps(data), mimetype="application/json")
 
 
 if __name__ == "__main__":
