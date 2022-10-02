@@ -68,7 +68,7 @@ def get_weather():
     if error:
         return {"error": True, "message": error}
 
-    return {"error": False, "data": {"temp": data.temp, "windSpeed": data.windSpeed, "gustSpeed": data.maxGustSpeed}}
+    return {"error": False, "data": {"temp": data.temp, "windSpeed": data.windSpeed, "gustSpeed": data.maxGustSpeed, "humidity": data.humidity, "windDescription": data.windDescription, "description": data.description}}
 
 
 @app.route("/api/solarstatus/xray")

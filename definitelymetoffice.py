@@ -80,8 +80,6 @@ def get_weather(locationID):
 
     temp = forecast.get("maxTempC")
 
-    tempK = temp - 273
-
     averageWindSpeed = forecast.get("windSpeedKph")
 
     description = forecast.get("enhancedWeatherDescription")
@@ -94,7 +92,7 @@ def get_weather(locationID):
 
     print(str(forecast))
 
-    return None, WeatherSample(tempK, averageWindSpeed, maxWindGustSpeed, humidity, windDescription, description)
+    return None, WeatherSample(temp, averageWindSpeed, maxWindGustSpeed, humidity, windDescription, description)
 
 
 if __name__ == "__main__":

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/assets/reset.css">
 
     <link rel="stylesheet" href="/assets/styles.css">
+
+    <script src="/assets/location.js"></script>
 </head>
 <body>
 <div class="earthsection">
@@ -19,7 +21,18 @@
         <img src="/assets/earth.png" alt="earth" class="earthimg">
     </div>
     <div class="earthtext">
-        <b>Earth weather in {{ placeName }}</b>
+        <p>
+            <b>Earth weather in {{ placeName }}</b>
+        </p>
+        <p>
+            <span id="weatherSummary">↻</span>
+        </p>
+        <p>
+            Earth Wind speed is <span id="earthWindSpeed">↻</span>kph with gusts of <span id="earthGustSpeed">↻</span>kph
+        </p>
+        <p>
+            The temperature is <span id="earthTemp">↻</span>°C - you aren't cooking an egg on that!
+        </p>
     </div>
 </div>
 <div class="sunsection">
@@ -30,11 +43,11 @@
         <p>
             <b>Equivalent weather on Sol at {{ latAdjusted }}°N, {{ lonAdjusted }}°E</b>
         </p>
-        <p>Solar Wind speed is <span id="solarWindSpeed"></span></p>
-        <p>X rays are <span id="xRayStatus"></span></p>
-        <p>The magnetosphere is <span id="magnetoStatus"></span></p>
+        <p>Solar Wind speed is <span id="solarWindSpeed">↻</span>kph</p>
+        <p>X rays are <span id="xRayStatus">↻</span></p>
+        <p>The magnetosphere is <span id="magnetoStatus">↻</span></p>
         <p>Position is inside/close to/far from a sunspot, with a very low/high/very high chance of solar flares.</p>
-        <p>The temperature is <span id="solTemp"></span> - an egg would vaporise in <span id="eggVaporiseTime"></span> milliseconds</p>
+        <p>The temperature is <span id="solTemp">↻</span>K - an egg would vaporise in <span id="eggVaporiseTime"></span> milliseconds</p>
     </div>
 
 </div>
