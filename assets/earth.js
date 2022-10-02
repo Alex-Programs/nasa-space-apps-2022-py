@@ -62,3 +62,7 @@ let params2 = new Proxy(new URLSearchParams(window.location.search), {
   });
   
 setLatLong(parseFloat(params2.lat), parseFloat(params2.lon))
+
+setTimeout(() => {
+    document.getElementById("three-earth").style.visibility = "visible"
+}, 500)
