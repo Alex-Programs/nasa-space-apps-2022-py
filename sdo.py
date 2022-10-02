@@ -3,6 +3,7 @@ from PIL import Image
 from io import BytesIO, StringIO
 import math
 from cachetools import cached, LRUCache, TTLCache
+from random import choice
 
 BRIGHTNESS_CUTOFF = 190
 
@@ -67,6 +68,9 @@ def get_temperature(lat, long):
             break
 
         last = {"temp": temp, "brightness": brightness}
+
+    if not last["temp"]:
+        return final["temp"]
 
     lastWeight = last["brightness"] / (last["brightness"] + final["brightness"])
     finalWeight = final["brightness"] / (last["brightness"] + final["brightness"])
