@@ -14,9 +14,8 @@ function updatePlaceList() {
 
         // For each item in the JSON array, add
         data.data.forEach(item => {
-            console.log(item)
             window.nameToData[item.name] = item
-            document.getElementById("searchitems-container").innerHTML += "<div class=\"searcheditem\" onclick='goToElement(this)'>" + item.name + ", " + item.container + "</div>";
+            document.getElementById("searchitems-container").innerHTML += "<div class=\"searcheditem\" onclick='goToElement(this)'>" + item.name + ", " + item.container + " (" + item.country +") </div>";
         });
     });
 }

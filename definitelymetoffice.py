@@ -90,8 +90,6 @@ def get_weather(locationID):
 
     humidity = forecast.get("humidity")
 
-    print(str(forecast))
-
     return None, WeatherSample(temp, averageWindSpeed, maxWindGustSpeed, humidity, windDescription, description)
 
 

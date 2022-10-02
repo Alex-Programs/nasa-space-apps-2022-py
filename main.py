@@ -6,6 +6,7 @@ import json
 import definitelymetoffice
 import solarstatus
 import NOAA
+import sdo
 
 solarRegions = NOAA.SolarRegionsData()
 sunspotData = NOAA.SunspotData()
@@ -32,10 +33,13 @@ def location():
     lon = float(request.args.get("lon"))
     placeName = request.args.get("name")
 
+    print(lat, lon, placeName)
+
     latAdjusted = lat
     lonAdjusted = lon / 2
 
-    return render_template("location.html", lat=lat, lon=lon, latAdjusted=round(latAdjusted, 3), lonAdjusted=round(lonAdjusted, 3), placeName=placeName, placeNameCaps=placeName.upper())
+    return render_template("location.html", lat=lat, lon=lon, latAdjusted=round(latAdjusted, 3),
+                           lonAdjusted=round(lonAdjusted, 3), placeName=placeName, placeNameCaps=placeName.upper())
 
 
 @app.route("/api/solarwind")
@@ -68,7 +72,9 @@ def get_weather():
     if error:
         return {"error": True, "message": error}
 
-    return {"error": False, "data": {"temp": data.temp, "windSpeed": data.windSpeed, "gustSpeed": data.maxGustSpeed, "humidity": data.humidity, "windDescription": data.windDescription, "description": data.description}}
+    return {"error": False, "data": {"temp": data.temp, "windSpeed": data.windSpeed, "gustSpeed": data.maxGustSpeed,
+                                     "humidity": data.humidity, "windDescription": data.windDescription,
+                                     "description": data.description}}
 
 
 @app.route("/api/solarstatus/xray")
@@ -99,7 +105,7 @@ def solar_regions():
     if not lat or not lon:
         return {"error": True, "message": "Lat/Lon not supplied"}
 
-    lat, lon = int(lat), int(lon)
+    lat, lon = float(lat), float(lon)
 
     print(lat, lon)
 
@@ -115,10 +121,12 @@ def sunspot_regions():
     lat = request.args.get("lat")
     lon = request.args.get("lon")
 
+    print(lat, lon)
+
     if not lat or not lon:
         return {"error": True, "message": "Lat/lon not supplied"}
 
-    lat, lon = int(lat), int(lon)
+    lat, lon = float(lat), float(lon)
 
     print(lat, lon)
 
@@ -128,6 +136,23 @@ def sunspot_regions():
         return {"error": True, "message": "No solar data"}
 
     return Response(json.dumps(data), mimetype="application/json")
+
+
+@app.route("/api/get_temperature")
+def get_temperature():
+    lat = request.args.get("lat")
+    lon = request.args.get("lon")
+
+    if not lat or not lon:
+        return {"error": True, "message": "Lat/lon not supplied"}
+
+    lat, lon = float(lat), float(lon)
+
+    print(lat, lon)
+
+    data = sdo.get_temperature(lat, lon)
+
+    return {"error": False, "data": data}
 
 
 if __name__ == "__main__":
